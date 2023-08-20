@@ -41,6 +41,7 @@ func serveApplication() {
     router := gin.Default()
 
 	config := cors.DefaultConfig()
+	config.AllowHeaders = []string{"Content-Type", "Authorization", "Access-Control-Allow-Origin"}
 	config.AllowOrigins = []string{"http://localhost:3000", "https://huawei-dev-challenge.web.app"}
 	router.Use(cors.New(config))
 
